@@ -1,0 +1,23 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# env
+.venv/
+.env
+*.conda
+.ipynb_checkpoints/
+
+# vscode
+.vscode/
+
+# data & outputs (不要推大文件)
+data/raw/
+data/processed/
+outputs/
+
+# OS
+.DS_Store
+Thumbs.db
