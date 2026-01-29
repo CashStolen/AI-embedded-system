@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite it as below."
+title: "capstone-eye-clarity"
+type: software
+version: "0.1.0"
+date-released: "2026-01-29"
+license: "MIT"
+repository-code: "https://github.com/CashStolen/AI-embedded-system"
+authors:
+  - family-names: "Chen"
+    given-names: "Yang"
+    alias: "InFCly"
+    # email: "your_email@example.com"   # optional
+keywords:
+  - "RV1126"
+  - "Rockchip"
+  - "RKNN"
+  - "NPU"
+  - "Embedded AI"
+  - "Image clarity assessment"
+  - "Edge inference"

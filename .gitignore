@@ -1,0 +1,38 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Host outputs
+host/outputs/
+host/**/runs/
+host/**/checkpoints/
+host/**/wandb/
+host/**/logs/
+
+# Bench outputs
+bench/results/*
+!bench/results/README.md
+
+# Datasets (keep docs only)
+host/data/raw/
+host/data/processed/
+host/data/datasets/
+
+# Artifacts (keep only small demo if you explicitly allow it)
+models/**/*.onnx
+models/**/*.rknn
+models/**/*.pt
+models/**/*.pth
+
+# Misc
+*.log
+*.tmp

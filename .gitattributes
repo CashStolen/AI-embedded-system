@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# (Optional) If you enable Git LFS later, you'll track these:
+# *.onnx filter=lfs diff=lfs merge=lfs -text
+# *.rknn filter=lfs diff=lfs merge=lfs -text
+# *.pt filter=lfs diff=lfs merge=lfs -text
+# *.pth filter=lfs diff=lfs merge=lfs -text
+# *.zip filter=lfs diff=lfs merge=lfs -text
