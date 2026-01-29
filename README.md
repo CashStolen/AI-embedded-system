@@ -70,15 +70,15 @@ Deployment scripts belong in:
 
 target/deploy/ (e.g., deploy.sh, run_on_board.sh)
 
-Versioning
+## Versioning
 
-Git tags follow SemVer: vMAJOR.MINOR.PATCH
+- Git tags follow SemVer: vMAJOR.MINOR.PATCH
 
-Milestones and acceptance criteria live in docs/roadmap.md
+- Milestones and acceptance criteria live in docs/roadmap.md
 
-Releases should attach key logs and (optionally) model artifacts
+- Releases should attach key logs and (optionally) model artifacts
 
-Data & Artifacts Policy
+## Data & Artifacts Policy
 
 Do not commit datasets: host/data/raw, host/data/processed
 
