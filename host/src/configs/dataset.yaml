@@ -1,0 +1,67 @@
+project:
+  name: capstone-eye-clarity
+  seed: 42
+
+paths:
+  raw_dir: host/data/raw/mpiigaze_subset
+  labeled_dir: host/data/labeled
+  processed_dir: host/data/processed
+  manifests_dir: host/data/manifests
+  splits_dir: host/data/splits
+  calib_dir: host/data/calib
+
+data_spec:
+  # 可以选：eye_roi / face / full
+  roi_mode: eye_roi
+
+  # 统一尺寸（后续和模型输入对齐）
+  image_size: [224, 224]
+
+  # 图像格式输出
+  out_ext: .jpg
+  jpeg_quality: 95
+
+label_spec:
+  # Milestone 2 推荐：有序分类 0~4
+  scheme: ordinal_5
+  classes:
+    0: very_blurry
+    1: blurry
+    2: ok
+    3: sharp
+    4: very_sharp
+
+  # label 来源：human / synthetic / baseline
+  default_label_type: synthetic
+
+split_spec:
+  # 防泄漏：同一 subject/session 不跨 split
+  group_by: session_id   # 可选：subject_id / session_id
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+pipeline:
+  # milestone2 最小闭环：extract -> preprocess -> baseline_score -> split -> export
+  enable_extract_frames: false   # 若 raw 是视频，改 true
+  enable_preprocess: true
+  enable_baselines: true
+  enable_split: true
+  enable_export_manifest: true
+  enable_export_calib: true
+
+augmentation:
+  # 用于 synthetic label（把少量清晰图扩增成不同清晰度）
+  enable_synthetic: true
+  per_image: 1
+  gaussian_blur_sigma:
+    very_blurry: [2.5, 4.0]
+    blurry:      [1.6, 2.4]
+    ok:          [0.8, 1.5]
+    sharp:       [0.3, 0.7]
+    very_sharp:  [0.0, 0.2]
+
+baselines:
+  # 传统算法 baseline（用于对比与伪标签辅助）
+  laplacian_var: true
+  tenengrad: true

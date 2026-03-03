@@ -36,3 +36,31 @@ models/**/*.pth
 # Misc
 *.log
 *.tmp
+
+# Local datasets (do not commit)
+host/data/raw/**
+host/data/processed/**
+host/data/labeled/**
+host/data/calib/**
+
+# Allow small docs/manifests if you want
+!host/data/README.md
+!host/data/manifests/**
+!host/data/splits/**
+
+# --- local datasets / generated artifacts (do not commit) ---
+host/data/raw/**
+host/data/processed/**
+host/data/labeled/**
+
+# calib
+host/data/calib/**
+!host/data/calib/calib_list.txt
+!host/data/calib/README.md
+host/data/calib/calib_list_abs.txt
+
+# manifests: keep repo light (recommended)
+host/data/manifests/manifest_*.csv
+
+# stats may contain absolute paths (optional: ignore)
+host/data/manifests/stats.json
